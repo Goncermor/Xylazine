@@ -129,7 +129,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="NtProcess.cpp" />
+    <ClCompile Include="Payloads.cpp" />
     <ClCompile Include="Xylazine.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="NtProcess.h" />
+    <ClInclude Include="Payloads.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
