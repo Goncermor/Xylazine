@@ -14,8 +14,6 @@ Xylazine comes packed with several entertaining effects to add realism to your f
 
 ## Prerequisites
 To compile Xylazine, you'll need the following:
-
-- C++ compiler
 - Visual Studio 2022 or later
 
 ## How to Use
@@ -23,17 +21,13 @@ To compile Xylazine, you'll need the following:
 2. Open the project in Visual Studio 2022.
 3. Build the project to generate the executable.
 4. Run the executable file on your target system.
-5. Activate the desired effects to initiate the prank.
 
 **:warning: Note**: Please ensure that you use this project responsibly and only on consenting individuals. Xylazine is intended for entertainment purposes only and should not be used to cause harm or panic.
 
 ## Contributing
 Contributions to Xylazine are welcome! If you have any ideas for new features, improvements, or bug fixes, feel free to submit a pull request.
 
-## License
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
 ## Acknowledgments
-Xylazine was inspired by the desire to create a harmless prank tool for amusement purposes. Special thanks to all contributors and supporters of this project.
+Xylazine was inspired by the desire to create a harmless prank tool for amusement purposes.
 
 Enjoy pranking responsibly with Xylazine! 🎉
