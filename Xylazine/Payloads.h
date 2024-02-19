@@ -3,6 +3,7 @@
 class Payloads
 {
 public: 
+	static std::atomic<bool> Shutdown;
 	static std::atomic<bool> ScreenShakeStop;
 	static void MouseShake();
 	static void ScreenShake();
@@ -10,6 +11,5 @@ public:
 	static void RandomErrors();
 	static void DisplayBugs();
 	static void DisplayArtifacts();
-	static void OpenRandomApps();
 };
 

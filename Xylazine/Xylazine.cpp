@@ -39,8 +39,6 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,_In_opt_ HINSTANCE hPrevInstance,
     Sleep(5000);
     std::thread ScreenShake(Payloads::ScreenShake);
     Sleep(5000);
-    std::thread OpenRandomApps(Payloads::OpenRandomApps);
-    Sleep(5000);
     std::thread ReverseText(Payloads::ReverseText);
     Sleep(5000);
     std::thread RandomErrors(Payloads::RandomErrors);
@@ -50,5 +48,9 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,_In_opt_ HINSTANCE hPrevInstance,
     Sleep(5000);
     std::thread DisplayBugs(Payloads::DisplayBugs);  
     Sleep(10000);
+    Payloads::Shutdown = true;
+    Sleep(1000);
+
+
     return 0;
 }
