@@ -7,10 +7,9 @@ Xylazine comes packed with several entertaining effects to add realism to your f
 
 1. **Mouse Shake**: 🐭💥 Simulates erratic movement of the mouse cursor.
 2. **Screen Shake**: 🖥️🔨 Creates a shaking effect on the entire screen.
-3. **Reverse Text**: ⬅️🔡 Reverses the display of text on the screen, making it appear upside down or mirrored.
+3. **Reverse Text**: ⬅️🔡 Reverses the display of text on the screen, making it appear mirrored.
 4. **Random Error Icons**: ❗🚫 Generates random error icons and displays them sporadically across the screen.
 5. **Display Artifacts**: 🖼️🔍 Simulates graphical glitches and artifacts on the display.
-6. **Display Bugs**: 🐞📺 Introduces bugs in the display, such as flickering or distortion.
 
 ## Prerequisites
 To compile Xylazine, you'll need the following:
